@@ -1,0 +1,132 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "LuaHubScript", HidePremium = false, SaveConfig = true, ConfigFolder = "ConfigsLua"})
+local Tab = Window:MakeTab({
+	Name = "Universal",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Area Principal"
+})
+Tab:AddButton({
+	Name = "Hitbox Legit!!",
+	Callback = function()
+      		print("Botão Precionado!")
+      		OrionLib:MakeNotification({
+	Name = "Hitbox!",
+	Content = "Hitbox Ativada!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+_G.HeadSize = 15
+_G.Disabled = true
+ 
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+  	end    
+})
+Tab:AddButton({
+	Name = "Hitbox Medio (tem que disfarsa!!)",
+	Callback = function()
+      		print("Botão Precionado!")
+      		OrionLib:MakeNotification({
+	Name = "Hitbox!",
+	Content = "Hitbox Ativada!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+_G.HeadSize = 30
+_G.Disabled = true
+ 
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+	end    
+})
+Tab:AddButton({
+	Name = "Hitbox Alto(Pouco Disfarsavel!!)",
+	Callback = function()
+      		print("Botão Precionado!")
+      		OrionLib:MakeNotification({
+	Name = "Hitbox!",
+	Content = "Hitbox Ativada!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+_G.HeadSize = 50
+_G.Disabled = true
+ 
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+  	end    
+})
+Tab:AddButton({
+	Name = "Esp!!",
+	Callback = function()
+      		print("Botão Precionado!")
+      		OrionLib:MakeNotification({
+	Name = "Esp!",
+	Content = "Esp Ativado!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Highlight = Instance.new("Highlight")
+Highlight.Name = "Highlight"
+function ApplyToCurrentPlayers()
+   for i,player in pairs(Players:GetChildren()) do
+      repeat wait() until player.Character
+      if not player.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
+         local HighlightClone = Highlight:Clone()
+         HighlightClone.Adornee = player.Character
+         HighlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart")
+         HighlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+         HighlightClone.Name = "Highlight"
+      end
+   end
+end
+RunService.Heartbeat:Connect(function()
+   ApplyToCurrentPlayers()
+end)
+  	end    
+})
+OrionLib:Init()
